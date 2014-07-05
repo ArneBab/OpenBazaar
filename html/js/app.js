@@ -452,8 +452,20 @@ angular.module('app')
                       welcome:'',
                       escrowAddresses:''}
   $scope.saveSettings = function() {
+      Notifier.success('User registration successful')
       var query = {'type': 'update_settings', settings: $scope.settings }
-      socket.send('update_settings', query)
+      socket.send('update_settings', query);
+
+      /*
+       *    if( the settings successfully updated)
+       *    {
+       *        Notifier.success('Success!', 'Settings saved successfully.');
+       *    }
+       *    else( the settings didn't successfully update)
+       *    {
+       *        Notifier.error('Error!', 'Your settings may not have saved properly.');
+       *    }
+       */
   }
 
 

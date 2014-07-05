@@ -442,7 +442,11 @@ angular.module('app')
       /*
        *    if( the settings successfully updated)
        *    {
-       *        Notifier.success('Settings saved successfully');
+       *        Notifier.success('Success!', 'Settings saved successfully.');
+       *    }
+       *    else( the settings didn't successfully update)
+       *    {
+       *        Notifier.error('Error!', 'Your settings may not have saved properly.');
        *    }
        */
   }

@@ -215,10 +215,11 @@ class TransportLayer(object):
                     different nodes.
         @type age: int
         """
-        return self.dht(self,
-                        key, value_to_store=value_to_store,
-                        originalPublisherID=originalPublisherID,
-                        age=age)
+        self.dht.iterativeStore(
+            key, 
+            value_to_store=value_to_store,
+            originalPublisherID=originalPublisherID,
+            age=age)
 
     def broadcast_goodbye(self):
         self.log.info("Broadcast goodbye")
